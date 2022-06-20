@@ -9,10 +9,16 @@ module {
         proposal_completed: Bool;
         proposal_total: Nat;
         proposal_exe_method : ExecuteMethod;
+        proposal_exe_target : Principal;
     };
 
     public type ExecuteMethod = {
         #addMember;
         #delMember;
+        #addRestriction;
+        #removeRestriction;
     };
+
+    public type Canister = Principal;
+    public type CanisterInfo = {canister : Canister; beRestricted : Bool};
 }
